@@ -1,24 +1,54 @@
 //practise.cpp -- practise demo
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 void func1(int);
 void func2(int,float,float);
+void func3(float,float,float);
+void func4(long);
+void func5(long long,long long);
 int main()
 {
-	int h;
+	//int h=0;
 	//func1(h);
-	int inch;
-	float ft,weight;
 	
-	cout << "Enter your hight in ft,inch:\n"; 
-	cout << "First,enter the ft:_\b";
-	cin >> ft;
-	cout << "second,enter the inch:__\b\b";
-	cin >> inch;
-	cout << "Enter your weight:___pounds.\b\b\b\b\b\b\b\b\b\b" ;
-	cin >> weight;
-	func2(inch,ft,weight);
+	//int inch;
+	//float ft,weight;
+	//cout << "Enter your hight in ft,inch:\n"; 
+	//cout << "First,enter the ft:_\b";
+	//cin >> ft;
+	//cout << "second,enter the inch:__\b\b";
+	//cin >> inch;
+	//cout << "Enter your weight:___pounds.\b\b\b\b\b\b\b\b\b\b" ;
+	//cin >> weight;
+	//func2(inch,ft,weight);
+	//
+	//float degrees,minutes,seconds;
+	//cout << "Enter a latitude in degrees,minutes,and seconds:\n";
+	//cout << "First ,enter the degrees:";
+	//cin >>degrees;
+	//cout << "Next ,enter the minutes of arc:";
+	//cin >>minutes;
+	//cout << "Finally ,enter the seconds of arc:";
+	//cin >>seconds;
+	//func3(degrees,minutes,seconds);
+
+	//long s;
+	//cout << "Enter the number of seconds: ";
+	//cin >> s;
+	//func4(s);
+
+	long long global,us;
+	//auto k=0.0f;
+	//double k;
+	cout << "Enter the world's population: ";
+	cin >> global;
+	cout << "Enter the population of US: ";
+	cin >> us;
+	func5(global,us);
+
+
 	return 0;
 }
 void func1(int h)
@@ -45,4 +75,44 @@ void func2(int inch,float ft,float weight)
 	cout << "Your height is:"<<height<< "meters.\n";
 	cout << "Your weight is:"<<weight << "kg.\n";
 	cout << "Your BMI is:"<< BMI <<endl; 
+}
+void func3(float degrees,float minutes,float seconds)
+{
+	const float k=60;
+	float latitude=0;
+	latitude = degrees + minutes / k + seconds / pow(k,2);
+	cout << degrees << " degrees, "
+		 << minutes << " minutes, "
+		 << seconds << " seconds = "
+		 << latitude<< " degrees\n";
+
+}
+void func4(long s)
+{
+	const long dayToHours = 24.0;
+	const long k = 60.0;
+	long day=0.0,h=0.0,m=0.0,s0=0.0;
+	s0 = s;
+	day = s / pow(k,2) / dayToHours;
+	h =  (s % (long) ((pow(k,2)*dayToHours)))/long (pow(k,2));	//% default sides datetype must accordence !!
+	m =  (s % (long) ((pow(k,2)*dayToHours)))%long (pow(k,2))/k;
+	s =  (s % (long) ((pow(k,2)*dayToHours)))%long (pow(k,2))%k;
+	cout << s0 << " seconds = "
+		 << day << " days,"
+		 << h << " hours,"
+		 << m << " minutes,"
+		 << s << " seconds\n";
+
+}
+void func5(long long global,long long us)
+{
+	//long long k;
+	float k;
+	//k = 100*us*1.0 / global;
+	k = 100*(double)us / global;	// the one side of / must be double ?
+	//cout << setiosflags(ios::fixed);
+	//cout << setprecision(6)<< k<<endl;
+	cout << "The population of the US is "
+		 << k <<"%"<<" of the world population.\n";
+
 }
