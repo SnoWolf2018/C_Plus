@@ -12,10 +12,13 @@ int getArrSize(T& arr)
 }
 
 //template <class T>
-//int getArrLength(const T & arr)
+//int getArrLength(T& arr)
 //{
 //	return end(arr)-begin(arr);
 //}
+
+
+
 using namespace std;
 	//8
 struct fish
@@ -133,6 +136,7 @@ int main()
 	unsigned int number_array;
 	cin >> number_array;
 	int* pii = new int [number_array];
+	vector<int> piv(number_array);
 
 	int arrdemo[5]={5, 4, 3, 2, 1};
 	for (int i=0;i<number_array;i++)
@@ -140,17 +144,26 @@ int main()
 		pii[i]=arrdemo[i];
 		cout << pii[i]<<endl;
 	}
-		
-	vector<int> piv(number_array);
+	int shuliang=0;		
+	//shuliang=end(arrdemo)-begin(arrdemo);
+	//shuliang=end(pii)-begin(pii);
+	for (int* p=begin(arrdemo);p !=end(arrdemo);p++)
+		shuliang ++;
+	cout << "shuliang = "<< shuliang<<endl;
+
 	cout << "sizeof pii is " << sizeof(pii) << endl;
 	cout << "sizeof pii is " << sizeof(pii[0]) << endl;
 	cout << "length of pii is " << foo(pii) << endl;
 	cout << "length of pii is " << getArrSize(pii) << endl;
+	cout << "length of pii is " << sizeof(pii) / sizeof(*pii)<< endl;
+
+	cout << "length of arrdemo is " << getArrSize(arrdemo) << endl;
+	//cout << "length of arrdemo is " << getArrLength(arrdemo) << endl;
+	//cout << "length of arrdemo is " << output(arrdemo) << endl;
 	cout << "sizeof piv is " << sizeof(piv) << endl;
 	delete [] pii;
 	
 	return 0;
 
 }
-
 
