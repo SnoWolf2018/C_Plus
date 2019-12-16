@@ -17,8 +17,6 @@ int getArrSize(T& arr)
 //	return end(arr)-begin(arr);
 //}
 
-
-
 using namespace std;
 	//8
 struct fish
@@ -163,7 +161,24 @@ int main()
 	cout << "sizeof piv is " << sizeof(piv) << endl;
 	delete [] pii;
 	
-	return 0;
+	//14
+	cout << (int *) "Home of the jolly bytes";
+	cout << endl;
 
+	//15
+	fish * pole = new fish;
+	cout << "Enter name of fish: ";
+	cin >> pole->name;
+	cout << "The name of new fish is: "<< pole->name<<endl;
+
+	//17
+	//#include <string>
+	//#include <vector>
+	//#include <array>
+	//const int str_num {10};	//or =10
+	//std::vector<std::string> vstr(Str_num);
+	//std::array<std::string,Str_num> astr;
+
+	return 0;
 }
 
