@@ -12,11 +12,11 @@ struct pizza
 int main()
 {
 	pizza * ps = new pizza;
-	cout<<"Enter the company of pizza: ";
-	cin>>ps->company;
 	cout<<"Enter the diameter of pizza: ";
 	//cin>>(*ps).diameter;
 	cin>>ps->diameter;
+	cout<<"Enter the company of pizza: ";
+	cin>>ps->company;
 	cout<<"Enter the weight of pizza: ";
 	cin>>(*ps).weight;
 	//cin>>ps->weight;
