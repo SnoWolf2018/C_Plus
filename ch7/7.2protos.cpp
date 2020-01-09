@@ -6,16 +6,25 @@ double cube(double x);	//prototype:returns a double
 int main()
 {
 	using namespace std;
-	cout<<"main() will call the simple() function:\n";
-	simple();	//function call
-		cout<<"main() is finished with the simple() function.\n";
-	//cin.get();
+	cheers(5);	//function call
+	cout<<"Give me a number: ";
+	double side;
+	cin>>side;
+	double volume=cube(side);	//function call
+	cout<<"A"<<side<<"-foot cube has a volume of "
+		<<volume<<" cubic feet.\n";
+	cheers(cube(2));	//prototype protection at work
 	return 0;
 }
 
-//function definition
-void simple()
+void cheers(int n)
 {
 	using namespace std;
-	cout<<"I'm but a simple function.\n";
+	for (int i=0;i<n;i++)
+		cout<<"Cheers! ";
+	cout<<endl;
+}
+double cube(double x)
+{
+	return x*x*x;
 }
