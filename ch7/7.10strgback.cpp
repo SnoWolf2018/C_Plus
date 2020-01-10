@@ -30,3 +30,6 @@ char * buildstr(char c,int n)
 		pstr[n] = c;	//fill rest of string
 	return pstr;
 }
+
+
+//
