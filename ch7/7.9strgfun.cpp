@@ -32,3 +32,4 @@ unsigned int c_in_str(const char * str,char ch)
 	}
 	return count;
 }
+//
