@@ -24,8 +24,8 @@ int main()
 	Show(d2);
 	Swap(d1,d2,Lim);		//matches new template
 	cout<<"Swaped arrays:\n";
-	Swap(d1);		
-	Swap(d2);	
+	Show(d1);		
+	Show(d2);	
 
 	return 0;
 }
@@ -39,6 +39,7 @@ void Swap(T &a,T &b)
 	a=b;
 	b=temp;
 }
+template<typename T> 		//or class T
 void Swap(T a[],T b[],int n)
 {
 	T temp;
